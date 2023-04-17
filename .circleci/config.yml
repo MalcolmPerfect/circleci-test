@@ -23,4 +23,8 @@ jobs:
           command: |
             . venv/bin/activate
             flake8
-            pytest -v --cov=calculator
+            mkdir test-results
+            pytest -v --junitxml=test-results/junit.xml --cov=calculator
+
+      - store_test_results:
+          path: test-results
