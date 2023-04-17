@@ -2,9 +2,11 @@
 version: 2.1
 jobs:
   build:
+#   going with 3.11 means will take the latest of 3.11
+#   only need a small execution environment
     docker:
-      - image: cimg/python:3.11
-
+      - image: cimg/python:3.11     
+    resource_class: small
 #    working_directory: ~/repo
 
     steps:
