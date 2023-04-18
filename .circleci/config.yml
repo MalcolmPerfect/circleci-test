@@ -26,7 +26,8 @@ jobs:
             . venv/bin/activate
             flake8
             mkdir test-results
-            pytest -v --junitxml=test-results/junit.xml --cov=calculator
+            pytest -v --junitxml=test-results/junit.xml --cov=calculator ./tests/unit
+            pytest -v --junitxml=test-results/junit_int.xml ./tests/integration
 
       - store_test_results:
           path: test-results
